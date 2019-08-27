@@ -1,0 +1,66 @@
+{
+  "name": "ustart-scripts",
+  "version": "1.0.0",
+  "description": "Scripts for uStart.",
+  "keywords": [
+    "ustart",
+    "graphql",
+    "graphql framework",
+    "sequelize",
+    "mongoose",
+    "postgres",
+    "mysql",
+    "mariadb",
+    "mongodb",
+    "sqlite",
+    "mssql"
+  ],
+  "author": "Leonel Peña <leonel@ustart.dev>",
+  "license": "MIT",
+  "homepage": "https://ustart.dev",
+  "bugs": {
+    "url": "https://github.com/ustart-dev/ustart/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ustart-dev/ustart.git"
+  },
+  "main": "./dist/lib/index.js",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build:dev": "npm run clean && babel src -d dist --copy-files",
+    "build": "npm run clean && babel --copy-files --no-comments --minified src -d dist",
+    "pack:test": "npm run build:dev && npm pack && mv ustart-*.tgz ../",
+    "test": "jest"
+  },
+  "dependencies": {
+    "apollo-errors": "^1.8.0",
+    "app-root-path": "^2.2.1",
+    "body-parser": "^1.18.2",
+    "compression": "^1.7.4",
+    "dotenv": "^7.0.0",
+    "graphql": "^0.13.2",
+    "graphql-shield": "^5.7.3",
+    "graphql-yoga": "^1.18.1",
+    "lodash": "^4.17.15",
+    "ustart": "file:../ustart-1.0.0.tgz"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-3": "^6.24.1",
+    "jest": "^22.4.3"
+  },
+  "files": [
+    "dist",
+    "template"
+  ],
+  "jest": {
+    "verbose": true,
+    "testMatch": [
+      "**/__tests__/**/(*.)+(spec|test).[jt]s?(x)",
+      "**/?(*.)+(spec|test).[jt]s?(x)"
+    ],
+    "testEnvironment": "node"
+  }
+}

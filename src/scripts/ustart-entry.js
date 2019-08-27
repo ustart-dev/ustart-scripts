@@ -9,13 +9,12 @@ const {
   SRC_PATH,
   DATA_PATH,
   CONFIG_PATH
-// } = require("../lib/constants");
 } = require("ustart");
-require(`${DATA_PATH}/datasources`);
 const shieldOptions = require(`${SRC_PATH}/shield/options`).default;
 const expressMiddlewares = require(`${SRC_PATH}/middlewares/express`).default;
 const graphqlMiddlewares = require(`${SRC_PATH}/middlewares/graphql`).default;
 const {
+  loadDatasources,
   loadModels,
   loadTypeDefs,
   loadResolvers,
@@ -24,9 +23,10 @@ const {
   loadDatabaseData,
   loadSchemaDirectives,
   createContext,
-// } = require("../lib/helpers");
 } = require("ustart");
 const yogaOptions = require(`${CONFIG_PATH}/yoga`);
+
+loadDatasources();
 
 loadModels();
 

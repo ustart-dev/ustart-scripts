@@ -1,6 +1,6 @@
-const emptyQuery = `
+const helloQuery = `
 query {
-  _EMPTY_
+  hello
 }
 `;
 
@@ -11,11 +11,11 @@ beforeAll(async () => {
 });
 
 describe("Example of test", () => {
-  test("empty query", async () => {
+  test("hello query", async () => {
     await expect(
-      client.request(emptyQuery)
+      client.request(helloQuery)
     ).resolves.toMatchObject({
-      "_EMPTY_": null
+      "hello": "Hello there, everything is right. You can keep reading the docs!"
     });
   });
 });

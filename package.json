@@ -43,7 +43,7 @@
     "graphql-shield": "^5.7.3",
     "graphql-yoga": "^1.18.1",
     "lodash": "^4.17.15",
-    "ustart": "file:../ustart-1.0.0.tgz"
+    "ustart": "^2.0.0-alpha.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

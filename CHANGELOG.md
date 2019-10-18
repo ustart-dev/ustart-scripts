@@ -1,12 +1,35 @@
 # CHANGELOG
 
+This is the log of notable changes to the ustart-scripts package.
+
 ----
 
-### Current changes (1.x.y)
+## master
 
-- Added LICENSE, COLLABORATORS and CHANGELOG files
+### 🛠 Breaking changes
+
+### 🎉 New features
+
+### 🐛 Bug fixes
+
+## 2.0
+
+### 🛠 Breaking changes
+
+- Updated dependency "ustart" to version 2.0.0
+- Replaced NODE_ENV value "testing" for "test", because it is more standard
+- Replaced test for "_EMPTY_" query with hello query
+- Move datasource script to config folder
 - Moved yoga config file from /src/config/yoga to /config
 
-### 1.0.0
+### 🎉 New features
+
+- Added plugins folder into src
+- Added LICENSE, COLLABORATORS and CHANGELOG files
+
+### 🐛 Bug fixes
+
+
+## 1.0.0
 
 - Not documented

@@ -8,6 +8,8 @@ This is the log of notable changes to the ustart-scripts package.
 
 ### 🛠 Breaking changes
 
+- Moved graphql-shield as optional package
+
 ### 🎉 New features
 
 ### 🐛 Bug fixes

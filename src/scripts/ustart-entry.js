@@ -4,13 +4,14 @@ const {
   makeExecutableSchema,
   addMockFunctionsToSchema
 } = require("graphql-tools");
-const { shield } = require("graphql-shield");
 const {
   SRC_PATH,
   DATA_PATH,
-  CONFIG_PATH
+  CONFIG_PATH,
+  Utils
 } = require("ustart");
-const shieldOptions = require(`${SRC_PATH}/shield/options`).default;
+const _ = require("lodash");
+const gShield = Utils.require("graphql-shield");
 const expressMiddlewares = require(`${SRC_PATH}/middlewares/express`).default;
 const graphqlMiddlewares = require(`${SRC_PATH}/middlewares/graphql`).default;
 const {
@@ -36,8 +37,6 @@ const typeDefs = loadTypeDefs();
 
 const resolvers = loadResolvers();
 
-const permissions = loadPermissions();
-
 const schemaDirectives = loadSchemaDirectives();
 
 const schema = makeExecutableSchema({
@@ -56,7 +55,14 @@ if (process.env.FAST_MOCKING == "true") {
   console.log("Fast mocking enabled!");
 } else {
   // permissions middlewares are loaded first, otherwise they will not work correctly.
-  middlewares = [shield(permissions, shieldOptions)].concat(graphqlMiddlewares);
+  middlewares = [];
+  const permissions = loadPermissions();
+  if (!_.isEmpty(permissions)) {
+    Utils.checkPackageAvailability(gShield, "graphql-shield");
+    const shieldOptions = require(`${SRC_PATH}/shield/options`).default;
+    middlewares = middlewares.concat(gShield.shield(permissions, shieldOptions));
+  }
+  middlewares = middlewares.concat(graphqlMiddlewares);
 }
 
 const graphQLServer = new GraphQLServer({

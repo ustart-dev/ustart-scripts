@@ -12,6 +12,8 @@ This is the log of notable changes to the ustart-scripts package.
 
 ### 🎉 New features
 
+- Added docker support
+
 ### 🐛 Bug fixes
 
 ## 2.0

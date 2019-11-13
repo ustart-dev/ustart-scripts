@@ -1,0 +1,16 @@
+version: "3"
+services:
+
+   dev:
+      image: node:dubnium-stretch-slim
+      volumes:
+        - nodemodules:/usr/src/service/node_modules
+        - .:/usr/src/service
+      working_dir: /usr/src/service
+      command: npm run start
+      ports:
+         - "4000:4000"
+
+volumes:
+  nodemodules:
+    external: true

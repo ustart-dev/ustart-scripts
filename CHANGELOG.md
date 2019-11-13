@@ -13,6 +13,7 @@ This is the log of notable changes to the ustart-scripts package.
 ### 🎉 New features
 
 - Added docker support
+- Added template for linting and formatting ignore files
 
 ### 🐛 Bug fixes
 

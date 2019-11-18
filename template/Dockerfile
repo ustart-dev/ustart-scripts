@@ -17,7 +17,7 @@ FROM node:dubnium-stretch-slim
 RUN apt-get install -y curl
 
 ENV NODE_ENV=production
-ENV GRAPHQL_ENDPOINT_PORT=5000
+ENV GRAPHQL_ENDPOINT_PORT=4000
 
 EXPOSE $GRAPHQL_ENDPOINT_PORT
 

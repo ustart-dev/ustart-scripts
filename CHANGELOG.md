@@ -9,6 +9,7 @@ This is the log of notable changes to the ustart-scripts package.
 ### 🛠 Breaking changes
 
 - Moved graphql-shield as optional package
+- Migrated to babel v7.7
 
 ### 🎉 New features
 

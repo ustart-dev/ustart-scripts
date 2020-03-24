@@ -17,9 +17,9 @@ FROM node:dubnium-stretch-slim
 RUN apt-get install -y curl
 
 ENV NODE_ENV=production
-ENV GRAPHQL_ENDPOINT_PORT=4000
+ENV PORT=4000
 
-EXPOSE $GRAPHQL_ENDPOINT_PORT
+EXPOSE $PORT
 
 WORKDIR /usr/src/service
 
@@ -32,7 +32,7 @@ COPY --from=build /src/config config
 HEALTHCHECK --interval=5s \
             --timeout=5s \
             --retries=6 \
-            CMD curl -fs http://localhost:$GRAPHQL_ENDPOINT_PORT/ || exit 1
+            CMD curl -fs http://localhost:$PORT/ || exit 1
 
 USER node
 

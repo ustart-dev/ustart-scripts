@@ -12,7 +12,7 @@
  * Option list: https://github.com/prisma/graphql-yoga#startoptions-options-callback-options-options--void----null-promisevoid
 */
 exports.options = {
-  port: parseInt(process.env.GRAPHQL_ENDPOINT_PORT, 10) || 4000,
+  port: parseInt(process.env.PORT, 10) || 4000,
   tracing: true,
   cacheControl: true
 };

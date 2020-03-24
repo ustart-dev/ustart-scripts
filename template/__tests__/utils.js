@@ -8,7 +8,7 @@ export default class TestingUtils {
 
   constructor() {
     this.graphqlUrl = process.env.GRAPHQL_ENDPOINT_URL || "http://127.0.0.1";
-    this.port = parseInt(process.env.GRAPHQL_ENDPOINT_PORT, 10) || 4000;
+    this.port = parseInt(process.env.PORT, 10) || 4000;
     this.endPoint = `${this.graphqlUrl}:${this.port}`;
   }
 

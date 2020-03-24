@@ -10,6 +10,7 @@ This is the log of notable changes to the ustart-scripts package.
 
 - Moved graphql-shield as optional package
 - Migrated to babel v7.7
+- Renamed environmental var GRAPHQL_ENDPOINT_PORT to PORT
 
 ### 🎉 New features
 
